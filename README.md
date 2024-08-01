@@ -1,27 +1,51 @@
-# Todo
+# Angular Practice: To-Do List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+## Objective
 
-## Development server
+Create a small to-do list application using Angular. The application allows users to add, display, delete, and mark to-do items as complete.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Demo
 
-## Code scaffolding
+![Demo GIF](demo.gif)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
 
-## Build
+1. **Add To-Do Item**
+    - Users should be able to add a new to-do item with a title.
+    - The input fields should be cleared after adding the item.
+2. **Display To-Do List**
+    - The application should display a list of all to-do items.
+    - Each item should display its title.
+3. **Delete To-Do Item**
+    - Users should be able to delete a to-do item from the list.
+    - A confirmation prompt should be shown before deletion.
+4. **Mark as Complete**
+    - Users should be able to mark a to-do item as complete.
+    - Completed items should be displayed differently (e.g., strikethrough text or different color).
+5. **Search or Filter Feature**
+    - Implement a search or filter feature to easily find specific to-do items.
+6. **Persist To-Do Items**
+    - Add local storage or backend integration to persist to-do items between sessions.
+7. **Edit To-Do Item**
+    - Users should be able to edit existing to-do items.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## How to Run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/nadineabuodeh/Angular-To-Do-List-Application.git
+    cd Angular-To-Do-List-Application
+    ```
 
-## Running end-to-end tests
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Run the application:
+    ```bash
+    ng serve
+    ```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Open your browser and navigate to `http://localhost:4200`.
