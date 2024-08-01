@@ -1,1 +1,41 @@
-<p>to-do-list works!</p>
+<div>
+  <form [formGroup]="todoForm" (ngSubmit)="addTask()" class="task-form">
+    <input formControlName="title" placeholder="Add your task here .." class="task-input">
+    <button type="submit" id="submit-btn">Add</button>
+  </form>
+
+  <input type="text" placeholder="Search tasks..." (input)="searchTasks($event)" class="task-input search-input">
+
+  <div *ngIf="todos.length > 0">
+    <table class="task-table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Completed</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of filteredTodos; let i = index">
+          <td [ngClass]="{'completed-task': todo.isComplete}" *ngIf="!todo.isEditing">{{ todo.title }}</td>
+          <td *ngIf="todo.isEditing">
+            <input [(ngModel)]="todo.editTitle" class="task-input">
+          </td>
+          <td>
+            <input type="checkbox" [checked]="todo.isComplete" (change)="isComplete(i)" />
+          </td>
+          <td>
+            <button *ngIf="!todo.isEditing" (click)="editTask(i)">Edit</button>
+            <button *ngIf="todo.isEditing" (click)="saveTask(i)">Save</button>
+            <button *ngIf="todo.isEditing" (click)="cancelEdit(i)">Cancel</button>
+          </td>
+          <td>
+            <button (click)="deleteTask(i, $event)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p *ngIf="todos.length === 0" id="no-task">No tasks available</p>
+</div>
